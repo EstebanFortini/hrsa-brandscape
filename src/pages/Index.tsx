@@ -13,6 +13,8 @@ import tinexSyb18 from "@/assets/products/tinex-syb-18.png";
 import tinexSyb920 from "@/assets/products/tinex-syb-920.png";
 import roblexBrick from "@/assets/products/roblex-brick.png";
 import roblexHidro from "@/assets/products/roblex-hidro.png";
+import fabricaEntrance from "@/assets/fabrica-entrance.jpg";
+import dameroIrat from "@/assets/damero-irat.png";
 
 const Index = () => {
   const brands = [
@@ -116,28 +118,77 @@ const Index = () => {
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="relative py-20 md:py-32 bg-gradient-to-br from-secondary via-background to-secondary">
-          <div className="container mx-auto px-4">
+        <section className="relative py-32 md:py-40 overflow-hidden">
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${fabricaEntrance})` }}
+          />
+          
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-primary/40" />
+          
+          {/* Damero Pattern Border Top */}
+          <div 
+            className="absolute top-0 left-0 right-0 h-16 bg-repeat-x opacity-90"
+            style={{ 
+              backgroundImage: `url(${dameroIrat})`,
+              backgroundSize: 'auto 100%'
+            }}
+          />
+          
+          {/* Content */}
+          <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white animate-fade-in">
                 Innovación y calidad desde 1970
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground mb-8">
+              <p className="text-xl md:text-2xl text-white/90 mb-8 animate-fade-in">
                 Removedores, thinners y disolventes de calidad profesional
               </p>
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8">
+              <Button 
+                size="lg" 
+                className="bg-primary hover:bg-primary/90 text-lg px-8 animate-scale-in shadow-xl hover:shadow-2xl transition-all"
+              >
                 Descubrir marcas
               </Button>
             </div>
           </div>
+          
+          {/* Damero Pattern Border Bottom */}
+          <div 
+            className="absolute bottom-0 left-0 right-0 h-16 bg-repeat-x opacity-90"
+            style={{ 
+              backgroundImage: `url(${dameroIrat})`,
+              backgroundSize: 'auto 100%'
+            }}
+          />
         </section>
 
         {/* Brand Launcher */}
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-background relative">
+          {/* Decorative Damero on the side */}
+          <div 
+            className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-48 bg-repeat-y opacity-20"
+            style={{ 
+              backgroundImage: `url(${dameroIrat})`,
+              backgroundSize: '100% auto',
+              transform: 'translateY(-50%) rotate(90deg)'
+            }}
+          />
+          <div 
+            className="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-48 bg-repeat-y opacity-20"
+            style={{ 
+              backgroundImage: `url(${dameroIrat})`,
+              backgroundSize: '100% auto',
+              transform: 'translateY(-50%) rotate(90deg)'
+            }}
+          />
+          
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Nuestras Marcas</h2>
-              <p className="text-lg text-muted-foreground">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-fade-in">Nuestras Marcas</h2>
+              <p className="text-lg text-muted-foreground animate-fade-in">
                 Tres marcas líderes, una tradición de excelencia
               </p>
             </div>
@@ -187,8 +238,18 @@ const Index = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-primary text-white">
-          <div className="container mx-auto px-4 text-center">
+        <section className="py-20 bg-primary text-white relative overflow-hidden">
+          {/* Damero Pattern Background */}
+          <div 
+            className="absolute inset-0 opacity-10"
+            style={{ 
+              backgroundImage: `url(${dameroIrat})`,
+              backgroundSize: '120px auto',
+              backgroundRepeat: 'repeat'
+            }}
+          />
+          
+          <div className="container mx-auto px-4 text-center relative z-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">¿Necesitás asesoramiento?</h2>
             <p className="text-xl mb-8 opacity-90">
               Nuestro equipo está listo para ayudarte a encontrar el producto ideal
@@ -197,7 +258,7 @@ const Index = () => {
               <Button
                 size="lg"
                 variant="secondary"
-                className="bg-white text-primary hover:bg-white/90"
+                className="bg-white text-primary hover:bg-white/90 hover-scale"
                 onClick={() => window.location.href = "/contacto"}
               >
                 <MessageCircle className="mr-2 h-5 w-5" />
@@ -206,7 +267,7 @@ const Index = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white/10"
+                className="border-white text-white hover:bg-white/10 hover-scale"
                 onClick={() => window.open("https://wa.me/541112345678", "_blank")}
               >
                 WhatsApp
